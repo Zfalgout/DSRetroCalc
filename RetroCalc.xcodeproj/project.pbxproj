@@ -49,6 +49,7 @@
 		769945A41ED5F60B00439D05 /* RetroCalcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RetroCalcUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		769945A81ED5F60B00439D05 /* RetroCalcUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetroCalcUITests.swift; sourceTree = "<group>"; };
 		769945AA1ED5F60B00439D05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76D372191EDA81C80088E563 /* techno_hideo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = techno_hideo.ttf; sourceTree = "<group>"; };
 		76EE11881ED6F1E800185625 /* Minecraft 2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Minecraft 2.ttf"; sourceTree = "<group>"; };
 		76EE118A1ED6F2AB00185625 /* btn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = btn.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,6 +104,7 @@
 			children = (
 				76EE118A1ED6F2AB00185625 /* btn.wav */,
 				76EE11881ED6F1E800185625 /* Minecraft 2.ttf */,
+				76D372191EDA81C80088E563 /* techno_hideo.ttf */,
 				769945881ED5F60A00439D05 /* AppDelegate.swift */,
 				7699458A1ED5F60A00439D05 /* ViewController.swift */,
 				7699458C1ED5F60A00439D05 /* Main.storyboard */,

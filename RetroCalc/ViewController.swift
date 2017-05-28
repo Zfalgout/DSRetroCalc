@@ -17,7 +17,52 @@ class ViewController: UIViewController {
     
     var runningNumber = ""
     
-    enum Operation: String //Lecture stopped here --- 6:46 in.
+    enum Operation: String {
+        case Divide = "/"
+        case Multiply = "*"
+        case Add  = "+"
+        case Subtract = "-"
+        case Empty = "Empty"
+    }
+    
+    var currentOperation = Operation.Empty
+    var leftValString = ""
+    var rtValString = ""
+    var result = ""
+    
+    @IBAction func onDividePressed(sender: AnyObject) {
+        playSound()
+        processOperation(operation: .Divide)
+    }
+    
+    @IBAction func onMultiplyPressed(sender: AnyObject) {
+        playSound()
+        processOperation(operation: .Multiply)
+    }
+    
+    @IBAction func onSubtractPressed(sender: AnyObject) {
+        playSound()
+        processOperation(operation: .Subtract)
+    }
+    
+    @IBAction func onAddPressed(sender: AnyObject) {
+        playSound()
+        processOperation(operation: .Add)
+    }
+    
+    @IBAction func onEqualPressed(sender: AnyObject) {
+        playSound()
+        processOperation(operation: currentOperation)
+    }
+    
+    @IBAction func onClearPressed(_ sender: UIButton) {
+        playSound()
+        leftValString = ""
+        rtValString = ""
+        runningNumber = ""
+        currentOperation = Operation.Empty
+        outputLbl.text = "0"
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +100,35 @@ class ViewController: UIViewController {
         btnSound.play()
     }
     
-    
+    func processOperation(operation: Operation) {
+        if currentOperation != Operation.Empty {
+            if runningNumber != "" {
+                rtValString = runningNumber
+                runningNumber = ""
+                
+                if currentOperation == Operation.Multiply {
+                    result = "\(Double(leftValString)! * Double(rtValString)!)"
+                } else if currentOperation == Operation.Divide {
+                    result = "\(Double(leftValString)! / Double(rtValString)!)"
+                } else if currentOperation == Operation.Add {
+                    result = "\(Double(leftValString)! + Double(rtValString)!)"
+                } else if currentOperation == Operation.Subtract {
+                    result = "\(Double(leftValString)! - Double(rtValString)!)"
+                }
+                
+                leftValString = result
+                outputLbl.text = result
+            }
+            
+            currentOperation = operation
+        } else {
+            //This is the first time an operator has been pressed
+            leftValString = runningNumber
+            runningNumber = ""
+            currentOperation = operation
+        }
+    }
+
+
 }
 
